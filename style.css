@@ -1,0 +1,131 @@
+/* ---- RESET ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ---- FOND ANIMÉ ---- */
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;        /* 🔥 PERMET LE SCROLL */
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ---- ANIMATION CŒURS ---- */
+.heart {
+    position: absolute;
+    top: -10px;
+    color: #ff2e63;
+    font-size: 20px;
+    animation: fall linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.3; }
+}
+
+/* ---- CONTENEUR ---- */
+.container {
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---- COMPTE À REBOURS ---- */
+#countdown {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 40px;
+    text-shadow: 0 0 8px rgba(255,255,255,0.8);
+    text-align: center;
+    width: 100%;
+}
+
+/* ---- MESSAGE ---- */
+#message {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+    width: 100%;
+}
+
+/* Apparition */
+.show {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+#message h1 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+
+    #countdown {
+        font-size: 2.4rem;
+    }
+
+    #message {
+        font-size: 1.05rem;
+        padding: 18px;
+    }
+
+    #message h1 {
+        font-size: 1.7rem;
+    }
+}
+.hidden {
+    display: none;
+}
+
+.play-btn {
+    background: #ff2e63;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    transition: 0.3s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.07);
+}
+#message {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+}
+
+.show {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
