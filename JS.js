@@ -1,7 +1,7 @@
 // ---- COMPTE À REBOURS ----
 
 const playButton = document.getElementById("playBtn");
-const targetDate = new Date("2025-11-14T15:00:00").getTime();
+const targetDate = new Date("2025-11-14T15:30:00").getTime();
 
 const countdownElement = document.getElementById("countdown");
 const messageElement = document.getElementById("message");
